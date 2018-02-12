@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all.reverse
+    @comments = Comment.all
   end
 
   def new
@@ -12,22 +13,40 @@ class PostsController < ApplicationController
 
   def create
     @posts = Post.create(
-      user_id: params[:id],
+      user_id: current_user.id,
       title: params[:title],
       content: params[:content]
     )
   end
 
-  def update
+  def edit
+    @posts = Post.find(params[:id])
+  end
 
+  def update
+    @posts = Post.find(params[:id])
+    @posts = Post.update(
+      title: params[:title],
+      content: params[:content]
+    )
+
+    redirect_to '/'
   end
 
   def destroy
-  end
+    @posts = Post.find(params[:id])
+    @posts.destroy
 
-  def edit
+    redirect_to '/'
   end
 
   def add_comment
+    @comments = Comment.create(
+      user_id: current_user.id,
+      post_id: params[:id],
+      content: params[:content]
+    )
+
+    redirect_to :back #"/posts/show/#{params[:id]}"
   end
 end
