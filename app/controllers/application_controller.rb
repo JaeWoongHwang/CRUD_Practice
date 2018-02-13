@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
     unless current_user
       flash[:notice] = "You must sign-up"
       redirect_to '/users/signin'
+    end  
   end
 
   helper_method(:current_user)
+
 end
