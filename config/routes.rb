@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'posts/index' => 'posts#index'
 
-  get 'posts/new' => 'posts#new'
+  post 'posts/new' => 'posts#new'
 
   get 'posts/show/:id' => 'posts#show'
 
@@ -18,13 +18,13 @@ Rails.application.routes.draw do
   get 'posts/:id/add_comment' => 'posts#add_comment'
 
 
-  get 'users/signup'
+  get 'users/signup' => 'users#signup'
 
-  get 'users/signin'
+  get 'users/signin' => 'users#signin'
 
-  get 'users/signout'
+  get 'users/signout' => 'users#signout'
 
-  get 'users/register'
+  get 'users/register' => 'users#register'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
