@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
   def signup
-
   end
 
   def signin
-
   end
 
   def signout
@@ -14,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def register
-    @users = User.create(
+    User.create(
       email: params[:email],
       password: params[:password]
     )
@@ -28,10 +26,11 @@ class UsersController < ApplicationController
       if users.password == params[:password]
         session[:user_id] == users.id
         flash[:notice] = "Sign-in Success"
+        redirect_to '/'
       elsif
         flash[:alert] = "Password is not correct"
         redirect_to '/users/signin'
-     end
+      end
     else
      flash[:alert] = "Your email is not exist"
      redirect_to '/users/signup'

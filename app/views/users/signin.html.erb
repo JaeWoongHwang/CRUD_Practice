@@ -1,7 +1,17 @@
 <h2>Sign-in Page</h2>
 <h3>Please Sign-in</h3>
-<form action="/users/signin_session">
+<p><%=flash[:notice]%></p>
+<div>
+<form action= "/users/signin_session">
   E-mail : <input type="email" name = "email"><br>
   Password : <input type="password" name = "password"><br>
-  <input type="submit" value = "SUBMIT">
+  <input type="submit" value = "Sign-in">
 </form>
+</div>
+
+<div>
+<h4>If you don't sign-up our service</h4>
+<form action="/users/signup">
+  <input type="submit" value="Sign-up">
+</form>
+</div>

@@ -24,8 +24,9 @@ Rails.application.routes.draw do
 
   get 'users/signout' => 'users#signout'
 
-  get 'users/register' => 'users#register'
+  get 'users/signin_session' => 'users#signin_session'
 
+  get 'users/register' => 'users#register'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
