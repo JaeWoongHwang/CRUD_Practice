@@ -19,6 +19,7 @@ class PostsController < ApplicationController
       title: params[:title],
       content: params[:content]
     )
+    redirect_to '/'
   end
 
   def edit

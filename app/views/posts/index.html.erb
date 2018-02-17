@@ -1,7 +1,14 @@
 <h2>Main Page</h2>
 <% @posts.each do |post| %>
-  <%= post.title %><br>
-  <%= post.content %><br>
-  <%= post.user.email %><br>
-  <%= time_ago_in_words(post.create_at)%><br>
+  <a href="/posts/show/<%= post.id %>"><%= post.title %></a><br>
+  <%= post.content %> |
+  <%= post.user.email %> |
+  <%= time_ago_in_words(post.created_at)%>
+
+
+  <br>
 <% end %>
+
+<div>
+  <%=link_to 'New Post', '/posts/new', :method => :post%>
+</div>

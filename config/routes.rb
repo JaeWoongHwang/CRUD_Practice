@@ -18,15 +18,15 @@ Rails.application.routes.draw do
   get 'posts/:id/add_comment' => 'posts#add_comment'
 
 
-  get 'users/signup' => 'users#signup'
+  get 'users/signup'
 
-  get 'users/signin' => 'users#signin'
+  get 'users/signin'
 
-  get 'users/signout' => 'users#signout'
+  get 'users/signout'
 
-  get 'users/signin_session' => 'users#signin_session'
+  get 'users/signin_session'
 
-  get 'users/register' => 'users#register'
+  get 'users/register'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
