@@ -27,12 +27,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    @posts = Post.find(params[:id])
-    @posts = Post.update(
-      title: params[:title],
-      content: params[:content]
-    )
-
+    posts = Post.find(params[:id])
+    posts.update(
+        title: params[:title],
+        content: params[:content]
+      )
     redirect_to '/'
   end
 

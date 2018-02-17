@@ -1,4 +1,13 @@
 <h2><%=@posts.title%> 's more information page</h2>
-Title : <%= @posts.title %><br>
-Content : <%= @posts.content %><br>
-User : <%= @posts.user.id %><br>
+<div >
+  Title : <%= @posts.title %><br>
+  Content : <%= @posts.content %><br>
+  User : <%= @posts.user.id %><br>
+</div>
+<div>
+  <a href="/posts/destroy/<%=@posts.id %>">[DELETE]</a>
+  <a href="/posts/edit/<%=@posts.id %>">[EDIT]</a>
+</div>
+<div>
+  [Comment List]
+</div>

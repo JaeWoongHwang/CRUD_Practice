@@ -1,7 +1,7 @@
 <h2>Main Page</h2>
 <% @posts.each do |post| %>
-  <a href="/posts/show/<%= post.id %>"><%= post.title %></a><br>
-  <%= post.content %> |
+  Title> <a href="/posts/show/<%= post.id %>"><%= post.title %></a><br>
+  Content> <%= post.content %> |
   <%= post.user.email %> |
   <%= time_ago_in_words(post.created_at)%>
 
@@ -12,3 +12,5 @@
 <div>
   <%=link_to 'New Post', '/posts/new', :method => :post%>
 </div>
+
+<a href="/users/signout">Sign-out </a>

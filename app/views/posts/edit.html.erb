@@ -1,2 +1,7 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h2><%=@posts.title%> 's edting page'</h2>
+<form action="/posts/update/<%= @posts.id %>" >
+  Title : <input type="text" name="title" value = "<%= @posts.title%>"  ><br>
+  Content : <input type="text" name="content"value = "<%=@posts.content %>"><br>
+  <input type="submit" value = "WRITE">
+</form>
+</form>
