@@ -53,11 +53,15 @@ class PostsController < ApplicationController
   end
 
   def edit_comment
+    @comments = Comment.find(params[:id])
+  end
+
+  def update_comment
     comments = Comment.find(params[:id])
     comments.update(
       content: params[:content]
     )
-    redirect_to :back
+    redirect_to '/'
   end
 
   def destroy_comment

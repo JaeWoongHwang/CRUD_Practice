@@ -19,7 +19,8 @@
   [Comment List]
   <% @posts.comments.each do |comment|  %>
   <p><%= comment.content%> | <%=comment.user.email%></p>
+  <a href="/posts/destroy_comment/<%=comment.id %>">[DELETE]</a>
+  <a href="/posts/edit_comment/<%=comment.id %>">[EDIT]</a>
   <% end %>
-  <a href="/posts/destroy_comment/<%=@posts.id %>">[DELETE]</a>
-  <a href="/posts/edit_comment/<%=@posts.id %>">[EDIT]</a>
+
 </div>

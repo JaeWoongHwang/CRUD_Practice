@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get 'posts/destroy_comment/:id' => 'posts#destroy_comment'
 
+  get 'posts/update_comment/:id' => 'posts#update_comment'
 
   get 'users/signup'
 
