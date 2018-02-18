@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   get 'posts/:id/add_comment' => 'posts#add_comment'
 
+  get 'posts/edit_comment/:id' => 'posts#edit_comment'
+
+  get 'posts/destroy_comment/:id' => 'posts#destroy_comment'
+
 
   get 'users/signup'
 

@@ -51,4 +51,19 @@ class PostsController < ApplicationController
 
     redirect_to :back #"/posts/show/#{params[:id]}"
   end
+
+  def edit_comment
+    comments = Comment.find(params[:id])
+    comments.update(
+      content: params[:content]
+    )
+    redirect_to :back
+  end
+
+  def destroy_comment
+    @comments = Comment.find(params[:id])
+    @comments.destroy
+
+    redirect_to :back
+  end
 end

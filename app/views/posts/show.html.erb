@@ -1,13 +1,25 @@
 <h2><%=@posts.title%> 's more information page</h2>
-<div >
+<div>
   Title : <%= @posts.title %><br>
   Content : <%= @posts.content %><br>
   User : <%= @posts.user.id %><br>
 </div>
+
+<form action= "/posts/<%=@posts.id %>/add_comment">
+  <input type="text" name= "content">
+  <input type="submit" value="SUBMIT">
+</form>
+
 <div>
   <a href="/posts/destroy/<%=@posts.id %>">[DELETE]</a>
   <a href="/posts/edit/<%=@posts.id %>">[EDIT]</a>
 </div>
+
 <div>
   [Comment List]
+  <% @posts.comments.each do |comment|  %>
+  <p><%= comment.content%> | <%=comment.user.email%></p>
+  <% end %>
+  <a href="/posts/destroy_comment/<%=@posts.id %>">[DELETE]</a>
+  <a href="/posts/edit_comment/<%=@posts.id %>">[EDIT]</a>
 </div>
